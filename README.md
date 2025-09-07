@@ -132,3 +132,22 @@ Join our [Discord](https://discord.gg/hummingbot) community to discuss strategie
 ## License
 
 Hummingbot Dashboard is licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for more details.
+
+## Streamlit Cloud Deployment
+
+For deploying to Streamlit Cloud, you need to:
+
+1. **Set up Backend API**: Deploy the Hummingbot Backend API separately (not included in this dashboard)
+2. **Configure Environment Variables**: In Streamlit Cloud, go to Settings → Secrets and add:
+   ```
+   BACKEND_API_HOST=your-backend-api-url.com
+   BACKEND_API_PORT=8000
+   BACKEND_API_USERNAME=admin
+   BACKEND_API_PASSWORD=admin
+   AUTH_SYSTEM_ENABLED=False
+   ```
+3. **Update requirements.txt**: Ensure all dependencies are included (python-dotenv, hummingbot-api-client, etc.)
+
+**Important**: The dashboard requires a running Hummingbot Backend API instance. The default configuration tries to connect to localhost:8000, which won't work on Streamlit Cloud. You must deploy the backend API separately and update the BACKEND_API_HOST environment variable with your backend API's public URL.
+
+See `.env.example` for configuration details.

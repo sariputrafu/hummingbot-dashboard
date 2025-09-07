@@ -11,3 +11,4 @@ pandas_ta
 sqlalchemy
 pyyaml
 python-dotenv
+hummingbot-api-client

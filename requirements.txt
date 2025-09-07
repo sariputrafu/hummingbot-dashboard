@@ -1,6 +1,6 @@
 - ccxt
 - streamlit>=1.36.0
-- streamlit_authenticator
+- streamlit-authenticator
 - watchdog
 - plotly
 - pycoingecko
